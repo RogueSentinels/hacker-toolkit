@@ -7,7 +7,7 @@
 wget https://raw.githubusercontent.com/RogueSentinels/hacker-toolkit/main/attack.sh && chmod +x attack.sh
 
 # Get your workstation ready
-./attack.sh workstation-setup
+sudo ./attack.sh workstation-setup
 
 # Start the attack !
 ./attack.sh up
