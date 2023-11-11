@@ -81,7 +81,6 @@ fn_up() {
     export RS_GAMMA_VERSION=$(cat $HOME/.roguesentinels/versions.json | jq -r ".gamma" |  tr -d '\n')
     export RS_DELTA_VERSION=$(cat $HOME/.roguesentinels/versions.json | jq -r ".delta" |  tr -d '\n')
     export RS_EPSILON_VERSION=$(cat $HOME/.roguesentinels/versions.json | jq -r ".epsilon" |  tr -d '\n')
-    export RS_ZETA_VERSION=$(cat $HOME/.roguesentinels/versions.json | jq -r ".zeta" |  tr -d '\n')
 
     docker compose -f $HOME/.roguesentinels/docker-compose.yaml up -d
 
@@ -96,7 +95,6 @@ fn_down() {
     export RS_GAMMA_VERSION=$(cat $HOME/.roguesentinels/versions.json | jq -r ".gamma" |  tr -d '\n')
     export RS_DELTA_VERSION=$(cat $HOME/.roguesentinels/versions.json | jq -r ".delta" |  tr -d '\n')
     export RS_EPSILON_VERSION=$(cat $HOME/.roguesentinels/versions.json | jq -r ".epsilon" |  tr -d '\n')
-    export RS_ZETA_VERSION=$(cat $HOME/.roguesentinels/versions.json | jq -r ".zeta" |  tr -d '\n')
 
     docker compose -f $HOME/.roguesentinels/docker-compose.yaml down
 

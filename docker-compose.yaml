@@ -49,14 +49,6 @@ services:
       production:
         ipv4_address: 192.168.30.6
 
-  zeta:
-    image: roguesentinels/zeta:${RS_ZETA_VERSION}
-    dns:
-      - 192.168.30.50
-    networks:
-      production:
-        ipv4_address: 192.168.30.7
-
 networks:
   production:
     ipam:
