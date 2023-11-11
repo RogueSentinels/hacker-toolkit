@@ -1,0 +1,65 @@
+version: "3"
+services:
+
+  dns:
+    image: roguesentinels/dns:${RS_DNS_VERSION}
+    dns:
+      - 192.168.30.50
+    networks:
+      production:
+        ipv4_address: 192.168.30.50
+
+  alpha:
+    image: roguesentinels/alpha:${RS_ALPHA_VERSION}
+    dns:
+      - 192.168.30.50
+    networks:
+      production:
+        ipv4_address: 192.168.30.2
+
+  beta:
+    image: roguesentinels/beta:${RS_BETA_VERSION}
+    dns:
+      - 192.168.30.50
+    networks:
+      production:
+        ipv4_address: 192.168.30.3
+
+  gamma:
+    image: roguesentinels/gamma:${RS_GAMMA_VERSION}
+    dns:
+      - 192.168.30.50
+    networks:
+      production:
+        ipv4_address: 192.168.30.4
+
+  delta:
+    image: roguesentinels/delta:${RS_DELTA_VERSION}
+    dns:
+      - 192.168.30.50
+    networks:
+      production:
+        ipv4_address: 192.168.30.5
+
+  epsilon:
+    image: roguesentinels/epsilon:${RS_EPSILON_VERSION}
+    dns:
+      - 192.168.30.50
+    networks:
+      production:
+        ipv4_address: 192.168.30.6
+
+  zeta:
+    image: roguesentinels/zeta:${RS_ZETA_VERSION}
+    dns:
+      - 192.168.30.50
+    networks:
+      production:
+        ipv4_address: 192.168.30.7
+
+networks:
+  production:
+    ipam:
+      config:
+        - subnet: 192.168.30.0/24
+          gateway: 192.168.30.1
