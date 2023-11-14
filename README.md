@@ -17,6 +17,12 @@ sudo ./attack.sh workstation-setup
 
 This reposisitory contains useful brute-force wordlists in the `wordlists` directory.
 
+## Main target
+
+Your main target is the local domain `rs.io`
+- IT IS NOT THE INTERNET DOMAIN "rs.io" (172.67.129.108/104.21.1.145)
+- ALWAYS GO THROUGH THE LOCAL DNS RESOLVER 192.168.30.50
+
 ## The DNS is not working
 
 To check if the DNS server is working, perform a basic DNS request to the local server using the command below.
