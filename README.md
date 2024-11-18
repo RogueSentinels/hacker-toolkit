@@ -15,7 +15,7 @@ sudo ./attack.sh workstation-setup
 ./attack.sh up
 ```
 
-This reposisitory contains useful brute-force wordlists in the `wordlists` directory.
+This repository contains useful brute-force wordlists in the `wordlists` directory.
 
 ## Main target
 
