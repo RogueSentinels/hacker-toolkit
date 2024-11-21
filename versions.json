@@ -2,7 +2,6 @@
   "dns": "v1",
   "alpha": "v2",
   "beta": "v1",
-  "gamma": "v1",
-  "delta": "v1",
-  "epsilon": "v2"
+  "gamma": "v3",
+  "delta": "v1"
 }
