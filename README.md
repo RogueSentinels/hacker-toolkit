@@ -5,7 +5,7 @@
 ## Introduction
 
 ```sh
-# Install the toolkit on a Kali Linux 64-bit
+# Install the toolkit on a Kali Linux (amd64 OU arm64 / Mac Apple Silicon)
 wget https://raw.githubusercontent.com/RogueSentinels/hacker-toolkit/main/attack.sh && chmod +x attack.sh
 
 # Get your workstation ready
@@ -19,23 +19,24 @@ This repository contains useful brute-force wordlists in the `wordlists` directo
 
 ## Main target
 
-Your main target is the local domain `rogue-sentinels.io`
-- IT IS NOT THE INTERNET DOMAIN "rogue-sentinels.io"
-- ALWAYS GO THROUGH THE LOCAL DNS RESOLVER 192.168.30.50
+Your main target is the local domain **`neptune-shipping.be`** (Neptune Shipping & Logistics S.A.)
+- IT IS NOT the real Internet — everything resolves on the LOCAL network `192.168.30.0/24`
+- ALWAYS GO THROUGH THE LOCAL DNS RESOLVER `192.168.30.50`
+
+## Apple Silicon / ARM (macOS)
+
+Rien de special a faire : les images sont **multi-arch**. Sur un Kali ARM64, Docker telecharge
+automatiquement les variantes **arm64 natives** — y compris le serveur **DNS**. La reconnaissance
+par nom de domaine fonctionne donc desormais aussi sur Mac. (Si une image posait probleme, lancez
+une seule fois `sudo ./attack.sh emulation-setup`.)
 
 ## The DNS is not working
 
-To check if the DNS server is working, perform a basic DNS request to the local server using the command below.
-
 ```sh
-# Try to perform a local DNS request with the command below. If the answer
-# does NOT contain "contact@rogue-sentinels.io", the Docker container is probably not 
-# started yet. Start with "./attack.sh up" or inspect with "docker ps".
-dig @192.168.30.50 rogue-sentinels.io
+# Doit renvoyer un enregistrement contenant "neptune-shipping.be" (TXT: contact@neptune-shipping.be).
+dig @192.168.30.50 neptune-shipping.be
 
-# Try to perform a local DNS request without specifying the Docker container.
-# If the answer does NOT contain "contact@rogue-sentinels.io", you workstation is not
-# configured properly: register the DNS server "192.168.30.50" and restart 
-# your network interface.
-dig rogue-sentinels.io
+# Sans preciser le serveur : si pas de reponse, votre workstation n'est pas configuree :
+# enregistrez le DNS "192.168.30.50" et relancez l'interface reseau (./attack.sh up le fait).
+dig neptune-shipping.be
 ```

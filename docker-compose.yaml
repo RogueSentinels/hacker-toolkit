@@ -1,51 +1,71 @@
+# Infra simulée Neptune Shipping & Logistics S.A. — réseau 192.168.30.0/24
+# Images multi-arch (amd64/arm64) : Docker choisit l'arch de l'hôte, aucun QEMU requis.
 services:
 
   dns:
     image: roguesentinels/dns:${RS_DNS_VERSION}
-    dns:
-      - 192.168.30.50
-    networks:
-      production:
-        ipv4_address: 192.168.30.50
-  web2000:
-    image: roguesentinels/web2000:${RS_WEB2000_VERSION}
-    dns:
-      - 192.168.30.50
-    networks:
-      production:
-        ipv4_address: 192.168.30.2
+    dns: [192.168.30.50]
+    networks: { production: { ipv4_address: 192.168.30.50 } }
 
-  salmon:
-    image: roguesentinels/salmon:${RS_SALMON_VERSION}
-    dns:
-      - 192.168.30.50
-    networks:
-      production:
-        ipv4_address: 192.168.30.3
+  vitrine:
+    image: roguesentinels/vitrine:${RS_VITRINE_VERSION}
+    dns: [192.168.30.50]
+    networks: { production: { ipv4_address: 192.168.30.10 } }
 
-  geoserver:
-    image: roguesentinels/geoserver:${RS_GEOSERVER_VERSION}
-    dns:
-      - 192.168.30.50
-    networks:
-      production:
-        ipv4_address: 192.168.30.4
+  webmail:
+    image: roguesentinels/webmail:${RS_WEBMAIL_VERSION}
+    dns: [192.168.30.50]
+    networks: { production: { ipv4_address: 192.168.30.11 } }
 
-  liberty:
-    image: roguesentinels/liberty:${RS_LIBERTY_VERSION}
-    dns:
-      - 192.168.30.50
-    networks:
-      production:
-        ipv4_address: 192.168.30.5
+  intranet:
+    image: roguesentinels/intranet:${RS_INTRANET_VERSION}
+    dns: [192.168.30.50]
+    networks: { production: { ipv4_address: 192.168.30.12 } }
 
-  sum:
-    image: roguesentinels/sum:${RS_SUM_VERSION}
-    dns:
-      - 192.168.30.50
-    networks:
-      production:
-        ipv4_address: 192.168.30.6
+  tracking:
+    image: roguesentinels/tracking:${RS_TRACKING_VERSION}
+    dns: [192.168.30.50]
+    networks: { production: { ipv4_address: 192.168.30.13 } }
+
+  db:
+    image: roguesentinels/phpmyadmin:${RS_PHPMYADMIN_VERSION}
+    dns: [192.168.30.50]
+    networks: { production: { ipv4_address: 192.168.30.14 } }
+
+  files:
+    image: roguesentinels/fileshare:${RS_FILESHARE_VERSION}
+    dns: [192.168.30.50]
+    networks: { production: { ipv4_address: 192.168.30.15 } }
+
+  legacy:
+    image: roguesentinels/legacy:${RS_LEGACY_VERSION}
+    dns: [192.168.30.50]
+    networks: { production: { ipv4_address: 192.168.30.16 } }
+
+  vpn:
+    image: roguesentinels/bastion:${RS_BASTION_VERSION}
+    dns: [192.168.30.50]
+    networks: { production: { ipv4_address: 192.168.30.17 } }
+
+  backup-host:
+    image: roguesentinels/backup-host:${RS_BACKUP_HOST_VERSION}
+    dns: [192.168.30.50]
+    networks: { production: { ipv4_address: 192.168.30.18 } }
+
+  printer:
+    image: roguesentinels/printer:${RS_PRINTER_VERSION}
+    dns: [192.168.30.50]
+    networks: { production: { ipv4_address: 192.168.30.19 } }
+
+  grafana:
+    image: roguesentinels/monitoring:${RS_MONITORING_VERSION}
+    dns: [192.168.30.50]
+    networks: { production: { ipv4_address: 192.168.30.20 } }
+
+  staging:
+    image: roguesentinels/staging:${RS_STAGING_VERSION}
+    dns: [192.168.30.50]
+    networks: { production: { ipv4_address: 192.168.30.21 } }
 
 networks:
   production:

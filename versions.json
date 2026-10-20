@@ -1,8 +1,15 @@
 {
-  "dns": "v3",
-  "web2000": "v2",
-  "salmon": "v2",
-  "geoserver": "v1",
-  "liberty": "v1",
-  "sum": "v1"
+  "dns": "v1",
+  "vitrine": "v1",
+  "webmail": "v1",
+  "intranet": "v1",
+  "tracking": "v1",
+  "phpmyadmin": "v1",
+  "fileshare": "v1",
+  "legacy": "v1",
+  "bastion": "v1",
+  "backup-host": "v1",
+  "printer": "v1",
+  "monitoring": "v1",
+  "staging": "v1"
 }

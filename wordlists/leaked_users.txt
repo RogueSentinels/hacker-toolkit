@@ -11,3 +11,8 @@ admin
 ansible
 apc
 azureuser
+hugo.vandenbossche
+deploy
+victoire.pelletiez
+mvanderberg
+ekowalski
