@@ -75,7 +75,7 @@ fn_up() {
     fn_upgrade
     fn_arch_notice
     fn_load_versions
-    docker compose -f $HOME/.roguesentinels/docker-compose.yaml up -d "$@"
+    docker compose -f $HOME/.roguesentinels/docker-compose.yaml up -d --pull always "$@"
     if [[ "$*" != *"--skip-dns"* ]]; then fn_dns-setup; fi
     echo -e "\n\e[1m\e[92mEnvironnement pret. Verifiez le DNS :\e[0m dig neptune-shipping.be"
 }
