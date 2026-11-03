@@ -12,7 +12,7 @@ wget https://raw.githubusercontent.com/RogueSentinels/hacker-toolkit/main/attack
 sudo ./attack.sh workstation-setup
 
 # Start the attack !
-./attack.sh up
+sudo ./attack.sh up
 ```
 
 This repository contains useful brute-force wordlists in the `wordlists` directory.
@@ -37,6 +37,6 @@ une seule fois `sudo ./attack.sh emulation-setup`.)
 dig @192.168.30.50 neptune-shipping.be
 
 # Sans preciser le serveur : si pas de reponse, votre workstation n'est pas configuree :
-# enregistrez le DNS "192.168.30.50" et relancez l'interface reseau (./attack.sh up le fait).
+# enregistrez le DNS "192.168.30.50" et relancez l'interface reseau (sudo ./attack.sh up le fait).
 dig neptune-shipping.be
 ```
